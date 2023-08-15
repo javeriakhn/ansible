@@ -1,21 +1,21 @@
-
 pipeline {
     agent any
 
      stages {
         stage('Checkout') {
             steps {
-                // Checkout your source code from version control if needed
-                // For example: checkout scm
+               git branch: 'main', url: 'https://github.com/javeriakhn/ansible.git'
             }
         }
 
         stage('Upload to S3') {
             steps {
-               
+               3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'jkashan', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'us-east-1', showDirectlyInBrowser: false, sourceFile: '**/*', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'demoprofile', userMetadata: []
+
             }
         }
     }
 
    
 }
+
