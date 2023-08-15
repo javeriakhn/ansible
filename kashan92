@@ -1,1 +1,21 @@
-hi......hhhh
+
+pipeline {
+    agent any
+
+     stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code from version control if needed
+                // For example: checkout scm
+            }
+        }
+
+        stage('Upload to S3') {
+            steps {
+               
+            }
+        }
+    }
+
+   
+}
